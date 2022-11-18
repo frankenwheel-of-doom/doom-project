@@ -1,0 +1,16 @@
+/* 'Creepster', sans-serif; 'Syne Mono', monospace; */
+
+/* RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Color Palette */
+    --colorone: #141706;
+    --colortwo: #8D9465;
+    --colorthree: #BBC387;
+    --colorfour: #F1FCAE;
+}
