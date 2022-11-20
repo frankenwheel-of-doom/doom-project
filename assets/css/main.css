@@ -13,4 +13,68 @@
     --colortwo: #8D9465;
     --colorthree: #BBC387;
     --colorfour: #F1FCAE;
+    --colorfive: #dcd1be;
+}
+
+body{
+    position: relative;
+    display: inline-block;
+}
+
+section:nth-last-of-type(3){
+    position: absolute;
+    top: 7rem;
+    font-family: 'Creepster', sans-serif;
+    font-size: 36px;
+    color: var(--colorfive);
+    text-align: center;
+    margin-left: 4rem;
+}
+section:nth-last-of-type(2){
+    position: absolute;
+    top: 16rem;
+    margin-left: 4rem;
+}
+section:nth-last-of-type(1){
+    display: flex;
+    flex-flow: column nowrap;
+    position: absolute;
+    justify-content: space-around;
+    top: 36rem;
+    margin-left: 4rem;
+}
+.play-button {
+    margin-top: 1rem;
+    width: 14rem;
+    height: 3.8rem; 
+    border-radius: 1rem;
+    font-family: 'Syne Mono', monospace;
+    color: #141706;
+    background-color: var(--colorthree);
+    font-size: 40px;
+    margin-left: 2rem;
+    border-color: var(--colorfour);
+}
+
+.deathlist-button{
+    margin-top: 1rem;
+    width: 10rem;
+    height: 2.5rem; 
+    border-radius: 1rem;
+    font-family: 'Syne Mono', monospace;
+    color: #141706;
+    background-color: var(--colortwo);
+    font-size: 15px;
+    margin-left: 4rem;
+}
+.instructions-button{
+    margin-top: 1rem;
+    width: 10rem;
+    height: 2.5rem; 
+    border-radius: 1rem;
+    font-family: 'Syne Mono', monospace;
+    color: #141706;
+    background-color: var(--colortwo);
+    font-size: 15px;
+    margin-left: 4rem;
 }
