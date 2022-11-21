@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+
+/** 'Creepster', sans-serif; 'Syne Mono', monospace; **/
+
+/* RESET */
+* {
+    box-sizing: border-box;
+    font-family: 'Syne Mono', monospace;
+    text-decoration: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh; /*Sera el 100% de la Altura de la pantalla*/
+    background-image: url("../imagenes/background-green-texture.jpeg");
+}
+
+:root {
+    /* Color Palette */
+    --colorone: #141706;
+    --colortwo: #8D9465;
+    --colorthree: #BBC387;
+    --colorfour: #F1FCAE;
+    --colorfive: #dcd1be;
+}
+h1{
+    font-family: 'Creepster', sans-serif;
+    font-size: 3rem;
+    color: var(--colorfive);
+}
+
+h1 span{
+    font-family: 'Creepster', sans-serif;
+    font-size: 2.25rem;
+    color: var(--colorfive);
+}
+
+h2 {
+    font-size: 2.25rem;
+    color: var(--colorfive);
+}
+
+
+
+.big-button {
+    margin: 1rem auto;
+    padding: 0.5rem 3rem;
+    font-size: 2.5rem;
+    border-radius: 1.25rem;
+    color: var(--colorone);
+    background-color: var(--colorthree);
+    border: 3px solid var(--colorfour);
+}
+
+.small-button {
+    margin: 1rem auto;
+    padding: 0.5rem 3rem;
+    font-size: 1.25rem;
+    border-radius: 1.25rem;
+    color: var(--colorone);
+    background-color: var(--colortwo);
+    border: 3px solid var(--colorthree);
+}
