@@ -61,3 +61,8 @@ body > section > div > button > img{
     bottom: 2rem;
     left: 2rem;
 }
+
+.dead > p{
+    background-color: var(--colorseven);
+    border: 3px solid var(--colorsix);
+}
