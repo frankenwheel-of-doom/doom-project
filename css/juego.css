@@ -1,0 +1,38 @@
+
+section {
+    display:flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    position:relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+img {
+    max-width: 95vw;
+    min-width: 95%;
+    object-fit: contain;
+    min-height: 60vh;
+    max-height: 95vh;
+    margin: 1rem auto;
+
+}
+
+.button-row{ /*si esto os parece bien, podemos ponerlo en style.css*/
+    display: flex;
+    justify-items: space-between;
+    gap: 5%;
+    flex-wrap: wrap;
+    min-width: 360px;
+    bottom: 0;
+    margin:auto;
+}
+
+.small-button { /*si esto os parece bien, podemos ponerlo en style.css*/
+    min-width: 10rem;
+    padding: 0.5rem 1em;
+}
+
+.big-button {/*si esto os parece bien, podemos ponerlo en style.css*/
+    margin:auto;
+}
