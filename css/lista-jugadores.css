@@ -5,11 +5,6 @@
 body {
     padding: 2rem;
     height: 100%;
-    background: url("../imagenes/bg-green-texture.jpeg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
 }
 
 body > section{
@@ -28,6 +23,7 @@ body > section > div{
 
 body > section > div > input, 
 body > section > div > p{
+    min-height: 3rem;
     height: 6vh;
     width: 60vw;
     min-width: 200px;
@@ -49,6 +45,7 @@ body > section > div > button{
 }
 
 body > section > div > button > img{
+    cursor: pointer;
     font-size: 2rem;
     background: none;
     color: var(--colorfive);
@@ -61,6 +58,10 @@ body > section > div > button > img{
     position: fixed;
     bottom: 2rem;
     left: 2rem;
+}
+
+.back-button:hover{
+    cursor: pointer;
 }
 
 .dead > p{

@@ -15,9 +15,10 @@
 
 body {
     min-height: 100vh; /*Sera el 100% de la Altura de la pantalla*/
-    background-image: url("../imagenes/background-green-texture.jpeg");
+    background-image: url("../imagenes/bg-green-texture.jpeg");
     background-repeat: no-repeat; /*RB: he añadido esto*/
     background-size: cover; /*RB: he añadido esto*/
+    background-position: center;
 }
 
 :root {
