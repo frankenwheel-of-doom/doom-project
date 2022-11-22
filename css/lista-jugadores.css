@@ -1,0 +1,70 @@
+/* *{
+    border: 1px red solid;
+} */
+
+body {
+    padding: 2rem;
+    height: 100%;
+}
+
+body > section{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+}
+
+body > section > div{
+    display: flex;
+    justify-content: center;
+}
+
+body > section > div > input, 
+body > section > div > p{
+    min-height: 3rem;
+    height: 6vh;
+    width: 60vw;
+    min-width: 200px;
+    justify-self: center;
+    align-self: center;
+    font-size: 1.25rem;
+    border-radius: 1.25rem;
+    color: var(--colorone);
+    background-color: var(--colortwo);
+    border: 3px solid var(--colorthree);
+    padding: 0 1rem 0 1rem;
+}
+
+body > section > div > button{
+    background: none;
+    color: var(--colorfive);
+    width: 3rem;
+    height: 3rem;
+}
+
+body > section > div > button > img{
+    cursor: pointer;
+    font-size: 2rem;
+    background: none;
+    color: var(--colorfive);
+    width: 3rem;
+    height: 3rem;
+    margin-left: 1rem;
+}
+
+.back-button{
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+}
+
+.back-button:hover{
+    cursor: pointer;
+}
+
+.dead > p{
+    background-color: var(--colorseven);
+    border: 3px solid var(--colorsix);
+}
