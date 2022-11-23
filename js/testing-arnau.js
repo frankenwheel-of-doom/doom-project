@@ -1,6 +1,6 @@
-const backbutton = document.querySelector(".back-button");
+let backbutton = document.querySelector(".back-button");
 
-backbutton.addEventListener("onclick", () => {
+backbutton.addEventListener("click", () => {
+    console.log("ohla");
     window.history.back();
-    location.reload();
-})
+});
