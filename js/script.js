@@ -1,14 +1,23 @@
-// Esto elige un nombre al azar del array 'names'
+// Esto elige un nombre al azar del array 'names' y lo elimina de la lista
 let names = ['Alba', 'Alexander', 'Arber', 'Arnau', 'Daniel', 'Denis', 'Fabio', 'Freddy', 'Gal', 'Hel', 'Joel', 'Lautaro', 'Manu', 'Nahuel', 'Ema', 'Ro', 'Rosie', 'Sablina', 'Sergi', 'Valeria', 'Victor'];
 let choose = document.querySelector('.buttonChoose');
-let randomName = '';
-
+let sacrificeRandom;
 
 choose.addEventListener('click', () =>{
-    randomName=names[Math.floor(Math.random()*names.length)];
-    console.log(randomName);  
-    return randomName;
-    });
+    sacrificeRandom = (array) =>{
+        if(array.length){
+            const random = Math.floor(Math.random()*array.length);
+            const randomName = array.splice(random,1)[0];
+            console.log(randomName); 
+            console.log(array);
+        }
+    };
+sacrificeRandom(names);})
+
+
+
+
+
 
 
 //Código para añadir un nombre a una lista    https://www.youtube.com/watch?v=vLfqrEP6weo
@@ -45,5 +54,3 @@ function deleteNames(){
             i--;
             }}    
     })};
-
-    
