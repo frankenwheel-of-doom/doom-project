@@ -7,8 +7,8 @@
 * {
     box-sizing: border-box;
     font-family: 'Syne Mono', monospace;
-    /*text-decoration: none;*/
-    /*border: 0;*/
+    text-decoration: none;
+    border: 0;
     margin: 0;
     padding: 0;
 }
@@ -210,3 +210,25 @@ h1{
 .doom{
     grid-area: doom;
 }*/
+
+
+/***** RECUPERACION BOTONES CSS STYLE ANTERIOR *******/
+
+.big-button {
+    margin: 1rem auto;
+    padding: 0.5rem 3rem;
+    font-size: 2.5rem;
+    border-radius: 1.25rem;
+    color: var(--colorone);
+    background-color: var(--colorthree);
+    border: 3px solid var(--colorfour);
+}
+.small-button {
+    margin: 1rem auto;
+    padding: 0.5rem 3rem;
+    font-size: 1.25rem;
+    border-radius: 1.25rem;
+    color: var(--colorone);
+    background-color: var(--colortwo);
+    border: 3px solid var(--colorthree);
+}
