@@ -38,3 +38,25 @@ img {
 .big-button {/*si esto os parece bien, podemos ponerlo en style.css*/
     margin:auto;
 }
+
+.random-name-div{
+    position: fixed;
+    background-color: transparent;
+    top: 0;
+    bottom: 0;
+    right: 0; 
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.random-name {
+    font-family: 'Creepster', sans-serif;
+    font-size: 30vw;
+    color: greenyellow;
+    text-align: center;
+    text-justify: center;
+}
