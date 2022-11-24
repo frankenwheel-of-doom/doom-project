@@ -1,0 +1,105 @@
+/*contenedor*/
+.kill{
+    width: 100vp;
+    height: 100vh;
+    display: flex;
+    flex-direction: 2 column;
+ }
+
+ /*1er div contiene la imagen kill*/
+ .kill .image-kill{
+    width: 100%;
+    height: 100vh;
+ }
+
+/*imagen kill*/
+ .kill .image-kill img{
+    
+    width: 22rem;
+    box-sizing: border-box;
+    display: flex;
+    object-fit: contain;
+    margin: 6rem auto;
+ }
+
+ /*2do div contiene los botones*/
+ .kill .buttons-kill{
+    width: 100%;
+    height: 100vh;
+    padding-top: 8rem;
+    
+ }
+
+/*botones*/
+.kill .buttons-kill button{
+    width: 300px;
+    padding: 2px;
+    display: flex;
+}
+
+/*imagen dentro de los botones*/
+.kill .buttons-kill button img{
+    width: 3rem;
+    height: 3rem;
+}
+
+p{
+   font-size: 30px;
+   margin: auto;
+}
+
+/*palabra*/
+.big-button .word-one{
+   padding-right: 40px;
+}
+
+.big-button .word-two{
+   padding-right: 20px;
+}
+.big-button .word-three{
+   padding-right: 40px;
+}
+
+/********** @media **********/
+
+@media (max-width:600px){
+    
+/*contenedor*/
+   .kill{
+      width: 100vp;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+     }
+
+/*1er div contiene la imagen kill*/
+   .kill .image-kill{
+        
+      width: 100%;
+      height: 50vh;
+     }
+
+/*imagen kill*/
+   .kill .image-kill img{
+      width: 12rem;
+      box-sizing: border-box;
+      display: flex;
+      object-fit: contain;
+      margin: 2rem auto;
+   }
+
+/*2do div contiene los botones*/
+   .kill .buttons-kill{
+      width: 100%;
+      height: 50vh;
+      padding-top: 0.5rem;
+   }
+
+/*botones*/
+   .kill .buttons-kill .big-button{
+      width: 250px;
+      height: 50px;
+      margin: 1.5rem auto;
+      font-size: 30px;
+  }
+}
