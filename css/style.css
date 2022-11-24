@@ -7,8 +7,8 @@
 * {
     box-sizing: border-box;
     font-family: 'Syne Mono', monospace;
-    text-decoration: none;
-    border: 0;
+    /*text-decoration: none;*/
+    /*border: 0;*/
     margin: 0;
     padding: 0;
 }
@@ -31,36 +31,94 @@ body {
     --colorsix: #d8dac5;
     --colorseven: #a0a390;
 }
+
+
+body {
+    
+    background-image: url("../imagenes/background-green-texture.jpeg");
+    background-repeat: no-repeat; /*RB: he añadido esto*/
+    background-size: cover; /*RB: he añadido esto*/
+    background-attachment: fixed;/*para que la altura de la imagen no supere a la del contenido */
+    
+    
+}
+
+.container {
+    max-width: 100vh;
+    height: 90%;
+    margin: auto;
+    padding: 20px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas:
+        ". . . ."
+        "img ti ti ti"
+        "img play play play"
+        ". . deat inst ";
+       
+}
+
+@media only screen and (max-width: 700px) {
+    .container {
+       grid-template-areas:
+       "ti ti ti ti "
+        "img img img img "
+        ". play play ."
+        ". . deat ."
+        ". . inst . ";
+        
+    }
+}
+
+.imginicio{
+    width: 30rem;
+    grid-area: img;
+}
+
 h1{
     font-family: 'Creepster', sans-serif;
     font-size: 3rem;
     color: var(--colorfive);
+    grid-area: ti;
+    justify-content: center;
+   	margin:auto;
+    
+    
+      
+}
+
+@media only screen and (min-width: 701px) {
+    h1{
+        font-size: 6rem;
+      
+    }
 }
 
 h1 span{
     font-family: 'Creepster', sans-serif;
     font-size: 2.25rem;
     color: var(--colorfive);
+    grid-area: of;
+
 }
 
-h2 {
+/*h2 {
     font-size: 2.25rem;
     color: var(--colorfive);
-}
+}*/
 
-
-
-.big-button {
+.button-play {
     margin: 1rem auto;
-    padding: 0.5rem 3rem;
+    padding: 0.5rem 4rem;
     font-size: 2.5rem;
     border-radius: 1.25rem;
     color: var(--colorone);
     background-color: var(--colorthree);
     border: 3px solid var(--colorfour);
+    grid-area: play;
 }
-
-.small-button {
+/*se crean nuevos nombres con clase en botones*/
+.button-deat{
     margin: 1rem auto;
     padding: 0.5rem 3rem;
     font-size: 1.25rem;
@@ -68,4 +126,17 @@ h2 {
     color: var(--colorone);
     background-color: var(--colortwo);
     border: 3px solid var(--colorthree);
+    grid-area: deat;
 }
+
+.button-inst{
+    margin: 1rem auto;
+    padding: 0.5rem 3rem;
+    font-size: 1.25rem;
+    border-radius: 1.25rem;
+    color: var(--colorone);
+    background-color: var(--colortwo);
+    border: 3px solid var(--colorthree);
+   grid-area: inst;
+}
+
