@@ -7,28 +7,35 @@ const namebox = document.querySelector(".added-name");
 const deadbox = document.querySelector("dead");
 const area = content.children[2];
 
-let lista = ["pepa", "josepa", "josefina", "lola", "marcelino"];
+let lista = [];
 
 // ADD
 addbutton.addEventListener("click", ()=> {
     // declare elements
+    let namevalue = inputnamebox.value
+
     let div = document.createElement("div");
     let newnamebox = document.createElement("p");
-    let newnamevalue = document.createTextNode(lista[lista.length-1]);
+    // let newnamevalue = document.createTextNode(lista[lista.length-1]);
+    let newnamevalue = document.createTextNode(namevalue);
+    lista.push(namevalue);
+    inputnamebox.value = "";
+    console.log(lista);
+
     let minusbutton = document.createElement("button")
     let icon = document.createElement("img")
     // a fragment will store them until they can be rendered together
     let fragment = document.createDocumentFragment();
-    
+
     // populate the fragment with the elements
     fragment.appendChild(div);
     div.appendChild(newnamebox);
-    div.classList.add("added-name")
+    div.classList.add("added-name");
     newnamebox.appendChild(newnamevalue);
     div.appendChild(minusbutton);
-    minusbutton.classList.add("minus-button")
+    minusbutton.classList.add("minus-button");
     minusbutton.appendChild(icon);
-    icon.setAttribute("src", "imagenes/minus.png")
+    icon.setAttribute("src", "imagenes/minus.png");
 
     // all elements are inserted at once, as a fragment
     content.insertBefore(fragment, area);
@@ -50,4 +57,3 @@ backbutton.addEventListener("click", () => {
 
 // pruebas
 
-newname.appendChild(newnamevalue);
