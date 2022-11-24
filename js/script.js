@@ -2,17 +2,38 @@
 let names = ['Alba', 'Alexander', 'Arber', 'Arnau', 'Daniel', 'Denis', 'Fabio', 'Freddy', 'Gal', 'Hel', 'Joel', 'Lautaro', 'Manu', 'Nahuel', 'Ema', 'Ro', 'Rosie', 'Sablina', 'Sergi', 'Valeria', 'Victor'];
 let choose = document.querySelector('.buttonChoose');
 let sacrificeRandom;
+let randomName;
 
 choose.addEventListener('click', () =>{
     sacrificeRandom = (array) =>{
         if(array.length){
             const random = Math.floor(Math.random()*array.length);
-            const randomName = array.splice(random,1)[0];
+            randomName = array.splice(random,1)[0];
             console.log(randomName); 
             console.log(array);
+            // return randomName;
         }
+    const revealSacrificeDiv = document.createElement("div");
+    revealSacrificeDiv.classList.add("random-name-div");
+    const revealSacrificeParagraph = document.createElement("p");
+    revealSacrificeParagraph.classList.add("random-name");
+    revealSacrificeDiv.appendChild(revealSacrificeParagraph);
+    const revealSacrificeName = document.createTextNode(randomName);
+    revealSacrificeParagraph.appendChild(revealSacrificeName);
+    let sevtion = document.querySelector("body");
+    const area = sevtion.children[2];
+    sevtion.insertBefore(revealSacrificeDiv, area);
+    
+    setTimeout(function () {
+    window.location.href = "sacrificio.html"}, 2000);
     };
+
+
+
+
 sacrificeRandom(names);})
+
+
 
 
 
