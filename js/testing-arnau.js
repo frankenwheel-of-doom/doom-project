@@ -50,9 +50,9 @@ addbutton.addEventListener("click", ()=> {
     namebox.remove();
 }) */
 
-content.on("click", deletebutton, function (){
+/* content.on("click", deletebutton, function (){
     console.log("deleted name")
-});
+}); */
 
 // GO BACK
 backbutton.addEventListener("click", () => {
