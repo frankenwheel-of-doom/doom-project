@@ -43,12 +43,18 @@ function addName(){
 
     // all elements are inserted at once, as a fragment
     content.insertBefore(fragment, area.nextSibling);
+    console.log("added name")
 }
 
 function delegate(e){
+    // console.log(e.target.parentNode.parentNode.children[0].innerText);
+    let name = e.target.parentNode.parentNode.children[0].innerText;
     if(e.target.classList.contains("minus-button")){
         console.log("deleted name");
         e.target.parentNode.parentNode.remove();
+        console.log(lista.indexOf(name));
+        lista.splice(lista.indexOf(name), 1);
+        console.log(lista);
     }
 }
 

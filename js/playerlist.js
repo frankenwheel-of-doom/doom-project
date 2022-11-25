@@ -18,7 +18,7 @@ let lista = [];
 
 // ADD NAME
 function addName(){
-    // it might be better to use innerHTML but it is too late for me
+    // it is probably better to use innerHTML but it is too late for me
 
     let namevalue = inputnamebox.value // take the name written in the input
     let div = document.createElement("div"); // create div
@@ -26,7 +26,6 @@ function addName(){
     let newnamevalue = document.createTextNode(namevalue); // add the name to the p
     lista.push(namevalue); // add the name to an array (the player list)
     inputnamebox.value = ""; // erase the content in the input box to write again
-    console.log(lista);
 
     let minusbutton = document.createElement("button") // create button
     let icon = document.createElement("img") // create the img element for the icon
@@ -45,13 +44,19 @@ function addName(){
 
     // all elements are inserted at once, as a fragment
     content.insertBefore(fragment, area.nextSibling);
+
+    console.log("added " + newnamebox.innerText);
+    console.log(lista);
 }
 
 // DELETE NAME
 function deleteName(e){
+    let name = e.target.parentNode.parentNode.children[0].innerText;
     if(e.target.classList.contains("minus-button")){
-        console.log("deleted name");
+        console.log("deleted " + e.target.parentNode.parentNode.children[0].innerText);
         e.target.parentNode.parentNode.remove();
+        lista.splice(lista.indexOf(name), 1);
+        console.log(lista);
     }
 }
 
