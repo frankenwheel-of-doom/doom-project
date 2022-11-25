@@ -11,7 +11,7 @@ choose.addEventListener('click', () =>{
             randomName = array.splice(random,1)[0];
             console.log(randomName); 
             console.log(array);
-            // return randomName;
+           
         }
     const revealSacrificeDiv = document.createElement("div");
     revealSacrificeDiv.classList.add("random-name-div");
