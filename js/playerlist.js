@@ -7,14 +7,16 @@ const namebox = document.querySelector(".added-name");
 const deadbox = document.querySelector("dead");
 // where new elements will appear
 const area = content.children[0];
+// player list
 let lista = [];
 
 (()=>{
     addbutton.addEventListener("click", addName);
-    content.addEventListener("click", delegate);
+    content.addEventListener("click", deleteName);
 
 })();
 
+// ADD NAME
 function addName(){
     // it might be better to use innerHTML but it is too late for me
 
@@ -45,56 +47,13 @@ function addName(){
     content.insertBefore(fragment, area.nextSibling);
 }
 
-function delegate(e){
+// DELETE NAME
+function deleteName(e){
     if(e.target.classList.contains("minus-button")){
         console.log("deleted name");
         e.target.parentNode.parentNode.remove();
     }
 }
-
-// ADD
-/* addbutton.addEventListener("click", ()=> {
-    // DECLARE ELEMENTS
-
-    let namevalue = inputnamebox.value
-    let div = document.createElement("div");
-    let newnamebox = document.createElement("p");
-    // let newnamevalue = document.createTextNode(lista[lista.length-1]);
-    let newnamevalue = document.createTextNode(namevalue);
-    lista.push(namevalue);
-    inputnamebox.value = "";
-    console.log(lista);
-
-    let minusbutton = document.createElement("button")
-    let icon = document.createElement("img")
-    // a fragment will store them until they can be rendered together
-    let fragment = document.createDocumentFragment();
-
-    // populate the fragment with the elements
-    fragment.appendChild(div);
-    div.appendChild(newnamebox);
-    div.classList.add("added-name");
-    newnamebox.appendChild(newnamevalue);
-    div.appendChild(minusbutton);
-    minusbutton.classList.add("minus-button");
-    minusbutton.appendChild(icon);
-    icon.setAttribute("src", "imagenes/minus.png");
-
-    // all elements are inserted at once, as a fragment
-    content.insertBefore(fragment, area.nextSibling);
-
-    console.log("added name");
-}) */
-
-// DELETE
-/* deletebutton.addEventListener("click", ()=> {
-    console.log("deleted name");
-    namebox.remove();
-}) */
-
-/* content.on("click", deletebutton, function (){
-    console.log("deleted name")
-}); */
 
 // GO BACK
 backbutton.addEventListener("click", () => {
@@ -102,5 +61,4 @@ backbutton.addEventListener("click", () => {
     window.history.back();
 });
 
-// pruebas
 

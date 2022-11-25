@@ -66,4 +66,5 @@ img:not([src*="dead"]), .back-button{
 .dead > p{
     background-color: var(--colorseven);
     border: 3px solid var(--colorsix);
+    color: rgb(70, 70, 70);
 }
