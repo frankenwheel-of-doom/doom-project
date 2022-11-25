@@ -1,60 +1,56 @@
 h2 {
-     text-align: center;
-     margin-top: 5vw;
+    text-align: center;
+    margin-top: 12vw;
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
 }
-
 section{
-    /*display:flex;
-    flex-direction: column;
-    position:relative;*/
-    height: 100vh;
-    width: 100vw;  
+   display:flex;
+   flex-direction: column;
+   height: 100vh;
+   width: 100vw;
 }
-
 
 div.text{
-    background-color: var(--colortwo);
-    /*min-height: 60vh;*/
-    max-height: 85vh;
-    margin-left: 1.3rem;
-    margin-right: 1.3rem;
-    padding: 1rem;
-    border-radius: 1.25rem;
+   background-color: var(--colortwo);
+   /*min-height: 60vh;*/
+   max-height: auto;
+   margin-left: 1.3rem;
+   margin-right: 1.3rem;
+   padding: 1rem;
+   border-radius: 1.25rem;
 }
 
 .doctor{
-    width: 50vw;
-    height:35vw
-    margin-left: 2rem;
-    margin-right: 1.3rem; 
+   width: 50vw;
+   height: 35vw
+   margin-left: 2rem;
+   margin-right: 1.5rem;
 }
 
-
-
 .container .doctor img{
-    width: 20rem;
-    margin-right: 1.3rem;
+   width: 20rem;
+   margin-right: 1.3rem;
 }
 
 .small-button{
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
+   position: fixed;
+   bottom: 2rem;
+   right: 2rem;
 }
-
-
 
 /*This media queries is to hide the image in the mobile version*/
-@media only screen and (max-width: 750px) { 
-    .doctor{display:none; (or) visibility:hidden;
-    }
-   .small-button{left: 2rem; right: auto;}
+@media only screen and (max-width: 750px) {
+   .doctor{display:none; (or) visibility:hidden;
+   }
+  .small-button{/*left: 2rem;*/ right: auto;}
 }
 
-    
 .container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-content: center;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   align-content: center;
+   align-items: center;
 }
