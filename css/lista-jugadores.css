@@ -44,7 +44,6 @@ body > section > div > button{
 }
 
 body > section > div > button > img{
-    cursor: pointer;
     font-size: 2rem;
     background: none;
     color: var(--colorfive);
@@ -59,7 +58,8 @@ body > section > div > button > img{
     left: 2rem;
 }
 
-.back-button:hover{
+/*  */
+img:not([src*="dead"]), .back-button{
     cursor: pointer;
 }
 
