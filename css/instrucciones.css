@@ -48,7 +48,7 @@ div.text{
 @media only screen and (max-width: 750px) { 
     .doctor{display:none; (or) visibility:hidden;
     }
-   .small-button{position: none;}
+   .small-button{left: 2rem; right: auto;}
 }
 
     
