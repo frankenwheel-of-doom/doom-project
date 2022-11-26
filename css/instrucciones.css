@@ -24,7 +24,7 @@ div.text{
 
 .doctor{
    width: 50vw;
-   height: 35vw
+   height: 35vw;
    margin-left: 2rem;
    margin-right: 1.5rem;
 }
@@ -42,9 +42,13 @@ div.text{
 
 /*This media queries is to hide the image in the mobile version*/
 @media only screen and (max-width: 750px) {
-   .doctor{display:none; (or) visibility:hidden;
+   .doctor{
+    display: none;
    }
-  .small-button{/*left: 2rem;*/ right: auto;}
+  .small-button{
+    /*left: 2rem;*/ 
+    right: auto;
+    }
 }
 
 .container{
