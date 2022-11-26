@@ -151,7 +151,7 @@ h1{
 
 @media (max-width: 750px){
     .imginicio{
-        width: 10rem;      
+        width: 12rem;      
     }
 }
 
@@ -164,7 +164,7 @@ h1{
 
 @media (max-width: 750px) {
     .button-play {
-        font-size: 20px;
+        font-size: 15px;
        
       
     }
@@ -172,12 +172,12 @@ h1{
 
 @media only screen and (max-width: 700px) {
     .button-deat {
-        font-size: 20px;
+        font-size: 15px;
     }
 }
 
 @media only screen and (max-width: 700px) {
     .button-inst {
-        font-size: 20px;
+        font-size: 15px;
     }
 }
