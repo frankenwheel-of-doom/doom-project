@@ -1,5 +1,6 @@
 // Esto elige un nombre al azar del array 'names' y lo elimina de la lista
 let names = ['Alba', 'Alexander', 'Arber', 'Arnau', 'Daniel', 'Denis', 'Fabio', 'Freddy', 'Gal', 'Hel', 'Joel', 'Lautaro', 'Manu', 'Nahuel', 'Ema', 'Ro', 'Rosie', 'Sablina', 'Sergi', 'Valeria', 'Victor'];
+let lista = localStorage.getItem("playerlist") // lista de nombres guardada en el localStorage
 let choose = document.querySelector('.buttonChoose');
 let sacrificeRandom;
 let randomName;
@@ -31,7 +32,7 @@ choose.addEventListener('click', () =>{
 
 
 
-sacrificeRandom(names);})
+sacrificeRandom(JSON.parse(lista));})
 
 
 

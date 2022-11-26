@@ -46,7 +46,7 @@ function addName(){
     content.insertBefore(fragment, area.nextSibling);
 
     localStorage.setItem("cemetery", muertos);
-    localStorage.setItem("playerlist", lista);
+    localStorage.setItem("playerlist", JSON.stringify(lista));
     console.log("added " + newnamebox.innerText);
     console.log(localStorage.getItem("playerlist"));
 }
@@ -59,7 +59,7 @@ function deleteName(e){
         e.target.parentNode.parentNode.remove(); // delete node from html
         lista.splice(lista.indexOf(name), 1); // delete name from list
 
-        localStorage.setItem("playerlist", lista);
+        localStorage.setItem("playerlist", JSON.stringify(lista));
         localStorage.setItem("cemetery", muertos);
         console.log(localStorage.getItem("playerlist"));
     }
