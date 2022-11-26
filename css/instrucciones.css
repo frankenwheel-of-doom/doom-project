@@ -15,7 +15,7 @@ section{
 div.text{
    background-color: var(--colortwo);
    /*min-height: 60vh;*/
-   max-height: auto;
+   max-height: 80vh;
    margin-left: 1.3rem;
    margin-right: 1.3rem;
    padding: 1rem;
@@ -23,14 +23,15 @@ div.text{
 }
 
 .doctor{
+   align-self: center;
    width: 50vw;
-   height: 35vw;
+   height: auto;
    margin-left: 2rem;
    margin-right: 1.5rem;
 }
 
 .container .doctor img{
-   width: 20rem;
+   width: 25rem;
    margin-right: 1.3rem;
 }
 
@@ -48,13 +49,12 @@ div.text{
   .small-button{
     /*left: 2rem;*/ 
     right: auto;
-    }
+   }
+
 }
 
 .container{
    display: flex;
    flex-direction: row;
    justify-content: space-around;
-   align-content: center;
-   align-items: center;
 }
