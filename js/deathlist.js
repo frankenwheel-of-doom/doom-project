@@ -1,19 +1,19 @@
-const content = document.querySelector("body > section")
-const backbutton = document.querySelector(".back-button");
-const addbutton = document.querySelector("button img[src*='plus']");
-const inputnamebox = document.querySelector("input[type='text']");
-const deletebutton = document.querySelector("button img[src*='minus']");
-const namebox = document.querySelector(".added-name");
-const deadbox = document.querySelector("dead");
+const content = document.querySelector("body > section") // section
+const backbutton = document.querySelector(".back-button"); // back button
+const addbutton = document.querySelector("button img[src*='plus']"); // add button
+const inputnamebox = document.querySelector("input[type='text']"); // input value
+const deletebutton = document.querySelector("button img[src*='minus']"); // delete button
+const namebox = document.querySelector(".added-name"); // added names
+const deadbox = document.querySelector("dead"); // cemetery names
 // where new elements will appear
 const area = content.children[0];
 // player list
 let lista = [];
+let muertos = [];
 
 (()=>{
     addbutton.addEventListener("click", addName);
     content.addEventListener("click", deleteName);
-
 })();
 
 // ADD NAME
@@ -45,8 +45,10 @@ function addName(){
     // all elements are inserted at once, as a fragment
     content.insertBefore(fragment, area.nextSibling);
 
+    localStorage.setItem("cemetery", muertos);
+    localStorage.setItem("playerlist", lista);
     console.log("added " + newnamebox.innerText);
-    console.log(lista);
+    console.log(localStorage.getItem("playerlist"));
 }
 
 // DELETE NAME
@@ -54,9 +56,12 @@ function deleteName(e){
     let name = e.target.parentNode.parentNode.children[0].innerText;
     if(e.target.classList.contains("minus-button")){
         console.log("deleted " + e.target.parentNode.parentNode.children[0].innerText);
-        e.target.parentNode.parentNode.remove();
-        lista.splice(lista.indexOf(name), 1);
-        console.log(lista);
+        e.target.parentNode.parentNode.remove(); // delete node from html
+        lista.splice(lista.indexOf(name), 1); // delete name from list
+
+        localStorage.setItem("playerlist", lista);
+        localStorage.setItem("cemetery", muertos);
+        console.log(localStorage.getItem("playerlist"));
     }
 }
 

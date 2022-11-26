@@ -44,6 +44,7 @@ function addName(){
     // all elements are inserted at once, as a fragment
     content.insertBefore(fragment, area.nextSibling);
     console.log("added name")
+    console.log(localStorage)
 }
 
 function delegate(e){
