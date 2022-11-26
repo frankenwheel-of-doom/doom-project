@@ -37,6 +37,7 @@ img {
 
 .big-button {/*si esto os parece bien, podemos ponerlo en style.css*/
     margin:auto;
+    cursor: pointer;
 }
 
 .random-name-div{
@@ -59,4 +60,34 @@ img {
     color: greenyellow;
     text-align: center;
     text-justify: center;
+}
+
+.end-game-pop-up-container{
+    position: fixed;
+    background-color: rgba(128, 128, 128, 0.712);
+    top: 0;
+    bottom: 0;
+    right: 0; 
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.end-game-pop-up{
+    position: fixed;
+    background-color: var(--colortwo);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin:auto;
+    padding: 5%;
+}
+
+.end-game-pop-up-paragraph {
+    margin: 1rem auto 3rem auto;
 }
