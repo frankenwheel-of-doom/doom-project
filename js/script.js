@@ -1,5 +1,6 @@
 // Esto elige un nombre al azar del array 'names' y lo elimina de la lista
-let names = ['Alba', 'Alexander', 'Arber', 'Arnau', 'Daniel', 'Denis', 'Fabio', 'Freddy', 'Gal', 'Hel', 'Joel', 'Lautaro', 'Manu', 'Nahuel', 'Ema', 'Ro', 'Rosie', 'Sablina', 'Sergi', 'Valeria', 'Victor'];
+//let names = ['Alba', 'Alexander', 'Arber', 'Arnau', 'Daniel', 'Denis', 'Fabio', 'Freddy', 'Gal', 'Hel', 'Joel', 'Lautaro', 'Manu', 'Nahuel', 'Ema', 'Ro', 'Rosie', 'Sablina', 'Sergi', 'Valeria', 'Victor'];
+let franken = document.querySelector("video")
 let lista = localStorage.getItem("playerlist") // lista de nombres guardada en el localStorage
 let choose = document.querySelector('.buttonChoose');
 let sacrificeRandom;
@@ -23,16 +24,18 @@ choose.addEventListener('click', () =>{
     revealSacrificeParagraph.appendChild(revealSacrificeName);
     let sevtion = document.querySelector("body");
     const area = sevtion.children[2];
-    sevtion.insertBefore(revealSacrificeDiv, area);
     
+    franken.play();
     setTimeout(function () {
-    window.location.href = "sacrificio.html"}, 2000);
+        sevtion.insertBefore(revealSacrificeDiv, area);
+    }, 1500);
+
+    /* setTimeout(function () {
+    window.location.href = "sacrificio.html"}, 4000); */
     };
 
-
-
-
-sacrificeRandom(JSON.parse(lista));})
+    sacrificeRandom(JSON.parse(lista));
+})
 
 
 
