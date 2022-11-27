@@ -30,8 +30,10 @@ choose.addEventListener('click', () =>{
         sevtion.insertBefore(revealSacrificeDiv, area);
     }, 1500);
 
-    /* setTimeout(function () {
-    window.location.href = "sacrificio.html"}, 4000); */
+    setTimeout(function () {
+    /* window.location.href = "sacrificio.html" */
+    sacrificeRandom();
+    }, 4000);
     };
 
     sacrificeRandom(JSON.parse(lista));
