@@ -5,63 +5,74 @@ const inputnamebox = document.querySelector("input[type='text']"); // input valu
 const deletebutton = document.querySelector("button img[src*='minus']"); // delete button
 const namebox = document.querySelector(".added-name"); // added names
 const deadbox = document.querySelector("dead"); // cemetery names
+
 // where new elements will appear
 const area = content.children[0];
+
 // player list
-let lista = [];
+let namelist = localStorage.getItem("playerlist");
+let parsedlist = JSON.parse(namelist);
+let lista = new Array;
 let muertos = [];
+let caja; 
 
 (()=>{
+    displayNames();
     addbutton.addEventListener("click", addName);
     content.addEventListener("click", deleteName);
 })();
 
+// for each name in the list, create a box and a button to delete it and display them
+function displayNames(){
+    if(namelist!=null){
+        for(let i = 0; i < parsedlist.length; i++){
+            lista.push(parsedlist[i]); // update the array with the local storage info
+            caja = `<p>${parsedlist[i]}</p>
+            <button><img src="imagenes/minus.png" class="minus-button"></button>`;
+            let div = document.createElement("div");
+            content.insertBefore(div, area.nextSibling);
+            div.classList.add("added-name");
+            div.innerHTML = caja;
+        }
+    }else{
+        // if there is no player list, create one
+        localStorage.setItem("playerlist", lista); 
+    }
+}
+
 // ADD NAME
 function addName(){
-    // it is probably better to use innerHTML but it is too late for me
-
-    let namevalue = inputnamebox.value // take the name written in the input
-    let div = document.createElement("div"); // create div
-    let newnamebox = document.createElement("p"); // create p
-    let newnamevalue = document.createTextNode(namevalue); // add the name to the p
+    let namevalue = inputnamebox.value // take the name from the input
     lista.push(namevalue); // add the name to an array (the player list)
+
+    // box with the name and button
     inputnamebox.value = ""; // erase the content in the input box to write again
-
-    let minusbutton = document.createElement("button") // create button
-    let icon = document.createElement("img") // create the img element for the icon
-    // a fragment will store them until they can be rendered together
-    let fragment = document.createDocumentFragment();
-
-    // populate the fragment with the elements
-    fragment.appendChild(div);
-    div.appendChild(newnamebox);
+    caja = `<p>${namevalue}</p>
+<button><img src="imagenes/minus.png" class="minus-button"></button>`;
+    let div = document.createElement("div");
+    content.insertBefore(div, area.nextSibling); // insert the box into the html
     div.classList.add("added-name");
-    newnamebox.appendChild(newnamevalue);
-    div.appendChild(minusbutton);
-    minusbutton.appendChild(icon);
-    icon.classList.add("minus-button");
-    icon.setAttribute("src", "imagenes/minus.png"); // add the icon to the img
+    div.innerHTML = caja;
 
-    // all elements are inserted at once, as a fragment
-    content.insertBefore(fragment, area.nextSibling);
-
+    //update the localStorage lists
     localStorage.setItem("cemetery", muertos);
     localStorage.setItem("playerlist", JSON.stringify(lista));
-    console.log("added " + newnamebox.innerText);
-    console.log(localStorage.getItem("playerlist"));
+    console.log("added: " + lista[lista.length-1]);
+    console.log("player list: " + localStorage.getItem("playerlist"));
 }
 
 // DELETE NAME
 function deleteName(e){
     let name = e.target.parentNode.parentNode.children[0].innerText;
     if(e.target.classList.contains("minus-button")){
-        console.log("deleted " + e.target.parentNode.parentNode.children[0].innerText);
+        console.log("deleted: " + e.target.parentNode.parentNode.children[0].innerText);
         e.target.parentNode.parentNode.remove(); // delete node from html
         lista.splice(lista.indexOf(name), 1); // delete name from list
 
+        // update the local storage lists
         localStorage.setItem("playerlist", JSON.stringify(lista));
         localStorage.setItem("cemetery", muertos);
-        console.log(localStorage.getItem("playerlist"));
+        console.log("player list: " + localStorage.getItem("playerlist"));
     }
 }
 
