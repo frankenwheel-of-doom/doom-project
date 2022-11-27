@@ -1,4 +1,4 @@
-// Esto elige un nombre al azar del array 'names' y lo elimina de la lista
+// Esto elige un nombre al azar del array 'names', lo enseña en pantalla y lo elimina de la lista
 let names = ['Alba', 'Alexander', 'Arber', 'Arnau', 'Daniel', 'Denis', 'Fabio', 'Freddy', 'Gal', 'Hel', 'Joel', 'Lautaro', 'Manu', 'Nahuel', 'Ema', 'Ro', 'Rosie', 'Sablina', 'Sergi', 'Valeria', 'Victor'];
 let choose = document.querySelector('.buttonChoose');
 let sacrificeRandom;
@@ -32,6 +32,8 @@ sacrificeRandom(names);})
 
 
 
+// ----------------end game pop up--------------------
+
 endGamePopUpFunction = (array) =>{
     if(array.length=1){
         const endGamePopUpContainer = document.createElement("div");
@@ -62,7 +64,6 @@ endGamePopUpFunction = (array) =>{
     }   
 
 endGamePopUpFunction(names);}
-
 
 
 
