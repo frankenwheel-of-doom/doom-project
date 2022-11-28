@@ -4,6 +4,7 @@ let sacrificeRandom;
 let randomName;
 let franken = document.querySelector("video")
 let lista = JSON.parse(localStorage.getItem("playerlist"));
+let names = ['Alba', 'Alexander', 'Arber', 'Arnau', 'Daniel', 'Denis', 'Fabio', 'Freddy', 'Gal', 'Hel', 'Joel', 'Lautaro', 'Manu', 'Nahuel', 'Ema', 'Ro', 'Rosie', 'Sablina', 'Sergi', 'Valeria', 'Victor'];
 
 let cemetery = localStorage.getItem("cemetery");
 let parsedcemetery = JSON.parse(cemetery);
@@ -12,7 +13,16 @@ let muertos = new Array;
 
 // ----------------end game pop up--------------------
 endGamePopUpFunction = (array) =>{
-    if(array.length==1 /* && document.referrer === 'sacrificio.html'*/){
+    if(lista==null){
+        localStorage.setItem("playerlist", JSON.stringify(names));
+        window.location.reload(); 
+    }
+    if(cemetery==null){
+        localStorage.setItem("cemetery", JSON.stringify(muertos)); 
+        window.location.reload(); 
+    }
+    console.log("lista: "+lista)
+    if(array.length==1 /* && document.referrer === 'sacrificio.html' */){
         // const endGamePopUpContainer = document.createElement("div");
         // endGamePopUpContainer.classList.add("end-game-pop-up-container");
 
@@ -56,7 +66,7 @@ endGamePopUpFunction = (array) =>{
         let sevtion = document.querySelector('body');
         const area = sevtion.children[2];
         sevtion.insertBefore(endGameDiv, area);
-    }   
+    }
 }
 endGamePopUpFunction(lista);
 

@@ -5,6 +5,7 @@ const inputnamebox = document.querySelector("input[type='text']"); // input valu
 const deletebutton = document.querySelector("button img[src*='minus']"); // delete button
 const namebox = document.querySelector(".added-name"); // added names
 const deadbox = document.querySelector("dead"); // cemetery names
+const resetbutton = document.querySelector("button:nth-of-type(2)");
 
 // where new elements will appear
 const area = content.children[0];
@@ -26,6 +27,7 @@ let cajamuerto;
     console.log(parsedcemetery);
     addbutton.addEventListener("click", addName);
     content.addEventListener("click", deleteName);
+    resetbutton.addEventListener("click", resetList);
 })();
 
 // for each name in the list, create a box and a button to delete it and display them
@@ -59,11 +61,11 @@ function displayNames(){
         localStorage.setItem("cemetery", JSON.stringify(muertos));
         window.location.reload(); 
     }
-}
+};
 
 // ADD NAME
 function addName(){
-    let namevalue = inputnamebox.value // take the name from the input
+    let namevalue = inputnamebox.value; // take the name from the input
     lista.push(namevalue); // add the name to an array (the player list)
 
     // box with the name and button
@@ -80,7 +82,7 @@ function addName(){
     localStorage.setItem("playerlist", JSON.stringify(lista));
     console.log("added: " + lista[lista.length-1]);
     console.log("player list: " + localStorage.getItem("playerlist"));
-}
+};
 
 // DELETE NAME
 function deleteName(e){
@@ -94,7 +96,7 @@ function deleteName(e){
         localStorage.setItem("playerlist", JSON.stringify(lista));
         console.log("player list: " + localStorage.getItem("playerlist"));
     }
-}
+};
 
 // GO BACK
 backbutton.addEventListener("click", () => {
@@ -102,4 +104,8 @@ backbutton.addEventListener("click", () => {
     window.history.back();
 });
 
-
+// RESET LIST 
+function resetList(){
+    localStorage.clear();
+    window.location.reload();
+};
