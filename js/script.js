@@ -14,6 +14,9 @@ choose.addEventListener('click', () =>{
             console.log(randomName); 
             console.log(array);
            
+        }else{
+            console.log(array[0]+" wins");
+            randomName = array[0] + " wins";
         }
     const revealSacrificeDiv = document.createElement("div");
     revealSacrificeDiv.classList.add("random-name-div");
@@ -30,9 +33,10 @@ choose.addEventListener('click', () =>{
         sevtion.insertBefore(revealSacrificeDiv, area);
     }, 1000);
     
-    setTimeout(function () {
+    /* setTimeout(function () {
     window.location.href = "sacrificio.html"
-    }, 3000);};
+    }, 3000); */
+    };
 
 sacrificeRandom(lista);})
 
