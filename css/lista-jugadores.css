@@ -1,7 +1,7 @@
 /* *{
     border: 1px red solid;
-}
- */
+} */
+
 body {
     padding: 2rem;
     height: 100%;
@@ -14,12 +14,13 @@ body > section{
     width: 100%;
     justify-content: center;
     align-content: center;
+    margin-bottom: 6rem;
 }
 
 body > section > div{
     display: flex;
     align-items: center;
-    justify-content: center;
+    align-self: center;
 }
 
 body > section > div > input, 
@@ -28,6 +29,7 @@ body > section > div > p{
     height: 6vh;
     width: 60vw;
     min-width: 200px;
+    max-width: 500px;
     font-size: 1.25rem;
     border-radius: 1.25rem;
     color: var(--colorone);
@@ -43,8 +45,11 @@ body > section > div > button{
     height: 3rem;
 }
 
+button{
+    border: none;
+}
+
 body > section > div > button > img{
-    cursor: pointer;
     font-size: 2rem;
     background: none;
     color: var(--colorfive);
@@ -59,11 +64,13 @@ body > section > div > button > img{
     left: 2rem;
 }
 
-.back-button:hover{
+/*  */
+img:not([src*="dead"]), .back-button{
     cursor: pointer;
 }
 
 .dead > p{
     background-color: var(--colorseven);
     border: 3px solid var(--colorsix);
+    color: rgb(70, 70, 70);
 }
