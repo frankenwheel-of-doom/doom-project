@@ -1,22 +1,25 @@
 // Esto elige un nombre al azar del array 'names', lo enseña en pantalla y lo elimina de la lista
-let names = ['Alba', 'Alexander', 'Arber', 'Arnau', 'Daniel', 'Denis', 'Fabio', 'Freddy', 'Gal', 'Hel', 'Joel', 'Lautaro', 'Manu', 'Nahuel', 'Ema', 'Ro', 'Rosie', 'Sablina', 'Sergi', 'Valeria', 'Victor'];
 let choose = document.querySelector('.buttonChoose');
 let sacrificeRandom;
 let randomName;
 let franken = document.querySelector("video")
 let lista = JSON.parse(localStorage.getItem("playerlist"));
+let cemetery = localStorage.getItem("cemetery");
+let parsedcemetery = JSON.parse(cemetery);
+let muertos = new Array;
 
 choose.addEventListener('click', () =>{
     sacrificeRandom = (array) =>{
         if(array.length>1){
             const random = Math.floor(Math.random()*array.length);
             randomName = array.splice(random,1)[0];
-            console.log(randomName); 
+            lista.splice(lista.indexOf(randomName, 1));
+            console.log(randomName+" dies");
             console.log(array);
-           
+            muertos.push(randomName);
+            
         }else{
-            console.log(array[0]+" wins");
-            randomName = array[0] + " wins";
+            //pop up
         }
     const revealSacrificeDiv = document.createElement("div");
     revealSacrificeDiv.classList.add("random-name-div");

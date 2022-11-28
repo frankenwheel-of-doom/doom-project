@@ -1,3 +1,4 @@
+
 section {
     display:flex;
     flex-direction: column;
@@ -92,24 +93,4 @@ img, video, canvas {
 
 .end-game-pop-up-paragraph {
     margin: 1rem auto 3rem auto;
-}
-
-/* ----------------CHOOSE BUTTON ANIMATION--------------- */
-
-@keyframes pulse {
-    0% {
-     transform: scale(1, 1);
-    }
-
-    50% {
-     transform: scale(1.1, 1.1);
-    }
-
-    100% {
-    transform: scale(1, 1);
-    }
-}
-
-.big-button {
-    animation: pulse 1.6s linear infinite;
 }
