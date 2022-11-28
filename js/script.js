@@ -8,7 +8,7 @@ let lista = JSON.parse(localStorage.getItem("playerlist"));
 
 choose.addEventListener('click', () =>{
     sacrificeRandom = (array) =>{
-        if(array.length){
+        if(array.length>1){
             const random = Math.floor(Math.random()*array.length);
             randomName = array.splice(random,1)[0];
             console.log(randomName); 
@@ -35,11 +35,6 @@ choose.addEventListener('click', () =>{
     }, 3000);};
 
 sacrificeRandom(lista);})
-
-
-
-
-sacrificeRandom(names);})
 
 
 
