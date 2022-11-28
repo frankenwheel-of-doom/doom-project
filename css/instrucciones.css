@@ -4,7 +4,9 @@ h2 {
     display: flex;
     justify-content: center;
     /*align-items: center;*/
+    margin-bottom: 2rem;
 }
+
 section{
    display:flex;
    flex-direction: column;
@@ -16,8 +18,8 @@ div.text{
    background-color: var(--colortwo);
    /*min-height: 60vh;*/
    max-height: 80vh;
-   margin-left: 1.3rem;
-   margin-right: 1.3rem;
+   margin-left: 2%;
+   margin-right: 2%;
    padding: 1rem;
    border-radius: 1.25rem;
 }
@@ -30,7 +32,7 @@ div.text{
    margin-right: 1.5rem;
 }
 
-.container .doctor img{
+.container-inst .doctor img{
    width: 25rem;
    margin-right: 1.3rem;
 }
@@ -39,6 +41,7 @@ div.text{
    position: fixed;
    bottom: 2rem;
    right: 2rem;
+   margin-left: 1.5rem;
 }
 
 /*This media queries is to hide the image in the mobile version*/
@@ -53,8 +56,11 @@ div.text{
 
 }
 
-.container{
+.container-inst{
    display: flex;
    flex-direction: row;
    justify-content: space-around;
+   margin-left: 2%;
+   margin-right: 2%;
+
 }
