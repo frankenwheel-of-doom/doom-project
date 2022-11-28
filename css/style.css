@@ -2,23 +2,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
 
 /** 'Creepster', sans-serif; 'Syne Mono', monospace; **/
-
 /* RESET */
 * {
     box-sizing: border-box;
     font-family: 'Syne Mono', monospace;
     text-decoration: none;
-    border: 0;
+    /*border: 0;*/
     margin: 0;
     padding: 0;
 }
 
 body {
-    min-height: 100vh; /*Sera el 100% de la Altura de la pantalla*/
+    min-height: 100vh;
+    /*Sera el 100% de la Altura de la pantalla*/
     background-image: url("../imagenes/bg-green-texture.jpeg");
-    background-repeat: no-repeat; /*RB: he añadido esto*/
-    background-size: cover; /*RB: he añadido esto*/
+    background-repeat: no-repeat;
+    /*RB: he añadido esto*/
+    background-size: cover;
+    /*RB: he añadido esto*/
     background-position: center;
+    /*RB: he añadido esto*/
+    background-attachment: fixed;
+}
+
+h2 {
+    color: var(--colorfive);
+    font-size: 2.5rem;
 }
 
 :root {
@@ -27,20 +36,9 @@ body {
     --colortwo: #8D9465;
     --colorthree: #BBC387;
     --colorfour: #F1FCAE;
-    --colorfive: #dcd1be;
-    --colorsix: #d8dac5;
-    --colorseven: #a0a390;
-}
-
-
-body {
-    
-    background-image: url("../imagenes/background-green-texture.jpeg");
-    background-repeat: no-repeat; /*RB: he añadido esto*/
-    background-size: cover; /*RB: he añadido esto*/
-    background-attachment: fixed;/*para que la altura de la imagen no supere a la del contenido */
-    
-    
+    --colorfive: #DCD1BE;
+    --colorsix: #D8DAC5;
+    --colorseven: #A0A390;
 }
 
 .container {
@@ -51,124 +49,44 @@ body {
     display: grid;
     /*grid-gap: 10px;*/
     text-align: center;
-    grid-template-areas:
-        ". . . ."
-        "img ti ti ti"
+    grid-template-areas: "img ti ti ti"
         "img play play play"
-        ". . deat inst ";
-       
+        ". deat . inst ";
+    align-items: center;
+    justify-items: stretch;
+    justify-content: center;
 }
 
-
-
-@media only screen and (max-width: 700px) {
-    .container {
-        max-width: 100vw;
-        height: 90vh;
-        margin: auto;
-        padding: 50px;
-        grid-template-areas:
-       "ti ti ti ti "
-        "img img img img "
-        ". play play ."
-        ". . deat ."
-        ". . inst . ";
-        
-    }
-    
-}
-
-
-.imginicio{
+.imginicio {
     position: relative;
     width: 20rem;
     grid-area: img;
 }
 
-h1{
+h1 {
     font-family: 'Creepster', sans-serif;
     font-size: 3rem;
     color: var(--colorfive);
     grid-area: ti;
     justify-content: center;
-   	margin:auto;
-
+    margin: auto;
 }
-.of{
+
+.of {
     font-family: 'Creepster', sans-serif;
     font-size: 2rem;
     color: var(--colorfive);
     grid-area: of;
     justify-content: center;
-  
 }
-.doom{
+
+.doom {
     font-family: 'Creepster', sans-serif;
-    font-size: 4rem;
+    font-size: 3rem;
     color: var(--colorfive);
     grid-area: doom;
     justify-content: center;
-   
 }
-
-
-@media only screen and (min-width: 701px) {
-    h1 {
-        font-size: 5rem;
-      
-    }
-}
-/*
-@media only screen and (max-width: 700px) {
-    .imginicio {
-        max-width: 60vw;
-        width: 50vh;
-        margin: 5px;
-        padding: 0px;
-
-    }
-}
-@media only screen and (max-width: 700px) {
-    .button-play {
-        max-width: 60vw;
-        width: 50vh;
-        margin: 5px;
-        padding: 0px;
-      
-    }
-}
-@media only screen and (max-width: 700px) {
-    .button-deat {
-        max-width: 60vw;
-        width: 50vh;
-        margin: 5px;
-        padding: 0px;
-      
-    }
-}
-
-@media only screen and (max-width: 700px) {
-    .button-inst {
-        max-width: 60vw;
-        width: 50vh;
-        margin: 5px;
-        padding: 0px;
-      
-    }
-}
-*/
-/*h1 span{
-    font-family: 'Creepster', sans-serif;
-    font-size: 2.25rem;
-    color: var(--colorfive);
-    grid-area: of;
-
-}*/
-
-/*h2 {
-    font-size: 2.25rem;
-    color: var(--colorfive);
-}*/
 
 .button-play {
     margin: 1rem auto;
@@ -180,8 +98,9 @@ h1{
     border: 3px solid var(--colorfour);
     grid-area: play;
 }
+
 /*se crean nuevos nombres con clase en botones*/
-.button-deat{
+.button-deat {
     margin: 1rem auto;
     padding: 0.5rem 3rem;
     font-size: 1.25rem;
@@ -192,7 +111,7 @@ h1{
     grid-area: deat;
 }
 
-.button-inst{
+.button-inst {
     margin: 1rem auto;
     padding: 0.5rem 3rem;
     font-size: 1.25rem;
@@ -200,20 +119,28 @@ h1{
     color: var(--colorone);
     background-color: var(--colortwo);
     border: 3px solid var(--colorthree);
-   grid-area: inst;
-}
-/*
-.of{
-    grid-area: of;
+    grid-area: inst;
 }
 
-.doom{
-    grid-area: doom;
-}*/
-
+/* se crean media para version movil y desktop*/
+@media (max-width: 750px) {
+    .container {
+        max-width: 100vw;
+        height: 90vh;
+        margin: auto;
+        padding: 50px;
+        grid-template-areas:
+            "ti ti ti ti "
+            ". of . doom "
+            "img img img img "
+            ". play play ."
+            ". . deat ."
+            ". . inst . ";
+        justify-items: center;
+    }
+}
 
 /***** RECUPERACION BOTONES CSS STYLE ANTERIOR *******/
-
 .big-button {
     margin: 1rem auto;
     padding: 0.5rem 3rem;
@@ -223,6 +150,7 @@ h1{
     background-color: var(--colorthree);
     border: 3px solid var(--colorfour);
 }
+
 .small-button {
     margin: 1rem auto;
     padding: 0.5rem 3rem;
@@ -231,4 +159,57 @@ h1{
     color: var(--colorone);
     background-color: var(--colortwo);
     border: 3px solid var(--colorthree);
+}
+
+@media (max-width: 750px) {
+    .imginicio {
+        width: 12rem;
+    }
+}
+
+@media (min-width: 751px) {
+
+    h1,
+    .doom {
+        font-size: 7rem;
+    }
+}
+
+@media (max-width: 750px) {
+    .button-play {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .button-deat {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .button-inst {
+        font-size: 15px;
+    }
+}
+
+
+/* ----------------CHOOSE BUTTON ANIMATION--------------- */
+
+@keyframes pulse {
+    0% {
+     transform: scale(1, 1);
+    }
+
+    50% {
+     transform: scale(1.1, 1.1);
+    }
+
+    100% {
+    transform: scale(1, 1);
+    }
+}
+
+.big-button {
+    animation: pulse 1s linear infinite;
 }

@@ -8,14 +8,13 @@ section {
     width: 100vw;
 }
 
-img {
+img, video, canvas {
     max-width: 95vw;
     min-width: 95%;
     object-fit: contain;
     min-height: 60vh;
     max-height: 95vh;
     margin: 1rem auto;
-
 }
 
 .button-row{ /*si esto os parece bien, podemos ponerlo en style.css*/
@@ -37,7 +36,10 @@ img {
 
 .big-button {/*si esto os parece bien, podemos ponerlo en style.css*/
     margin:auto;
+    cursor: pointer;
 }
+
+/* ----------------NAME OF CODER TO BE SACRIFICED-------------- */
 
 .random-name-div{
     position: fixed;
@@ -59,4 +61,36 @@ img {
     color: greenyellow;
     text-align: center;
     text-justify: center;
+}
+
+/* -----------------END GAME POP UP--------------------- */
+
+.end-game-pop-up-container{
+    position: fixed;
+    background-color: rgba(128, 128, 128, 0.712);
+    top: 0;
+    bottom: 0;
+    right: 0; 
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.end-game-pop-up{
+    position: fixed;
+    background-color: var(--colortwo);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin:auto;
+    padding: 5%;
+}
+
+.end-game-pop-up-paragraph {
+    margin: 1rem auto 3rem auto;
 }
