@@ -45,6 +45,10 @@ body > section > div > button{
     height: 3rem;
 }
 
+button{
+    border: none;
+}
+
 body > section > div > button > img{
     font-size: 2rem;
     background: none;

@@ -33,12 +33,12 @@ choose.addEventListener('click', () =>{
         sevtion.insertBefore(revealSacrificeDiv, area);
     }, 1000);
     
-    /* setTimeout(function () {
+    setTimeout(function () {
     window.location.href = "sacrificio.html"
-    }, 3000); */
+    }, 3000);
     };
 
-sacrificeRandom(lista);})
+sacrificeRandom(names);})
 
 
 

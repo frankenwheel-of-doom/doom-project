@@ -1,9 +1,9 @@
 let stab = document.querySelector('.stab');
-let sound1 = new Audio ('../sonidos/sound-stab.mp3');
+let sound1 = new Audio ('sonidos/sound-stab.mp3');
 let electrocute= document.querySelector('.electrocute');
-let sound2 = new Audio ('../sonidos/sound-electrocute.mp3');
+let sound2 = new Audio ('sonidos/sound-electrocute.mp3');
 let poison = document.querySelector('.poison');
-let sound3 = new Audio ('../sonidos/sound-machine-gun.mp3')
+let sound3 = new Audio ('sonidos/sound-machine-gun.mp3');
 
 stab.addEventListener('click', () =>{
 sound1.play();
