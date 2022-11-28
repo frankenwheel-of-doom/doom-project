@@ -72,8 +72,7 @@ choose.addEventListener('click', () =>{
         }
         if(array.length>1){
             const random = Math.floor(Math.random()*array.length);
-            randomName = array.splice(random,1)[0];
-            lista.splice(lista.indexOf(randomName, 1));
+            randomName = lista.splice(random,1)[0];
             console.log(randomName+" dies");
             console.log(array);
             muertos.push(randomName);
