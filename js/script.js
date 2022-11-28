@@ -1,10 +1,60 @@
 // Esto elige un nombre al azar del array 'names', lo enseña en pantalla y lo elimina de la lista
-let names = ['Alba', 'Alexander', 'Arber', 'Arnau', 'Daniel', 'Denis', 'Fabio', 'Freddy', 'Gal', 'Hel', 'Joel', 'Lautaro', 'Manu', 'Nahuel', 'Ema', 'Ro', 'Rosie', 'Sablina', 'Sergi', 'Valeria', 'Victor'];
+let names = ['Alba', 'Alexander', /*'Arber', 'Arnau', 'Daniel', 'Denis', 'Fabio', 'Freddy', 'Gal', 'Hel', 'Joel', 'Lautaro', 'Manu', 'Nahuel', 'Ema', 'Ro', 'Rosie', 'Sablina', 'Sergi', 'Valeria', 'Victor'*/];
 let choose = document.querySelector('.buttonChoose');
 let sacrificeRandom;
 let randomName;
 let franken = document.querySelector("video")
 let lista = JSON.parse(localStorage.getItem("playerlist"));
+
+console.log(names.length);
+// ----------------end game pop up--------------------
+endGamePopUpFunction = (array) =>{
+    if(array.length==1 /* && document.referrer === 'sacrificio.html'*/){
+        // const endGamePopUpContainer = document.createElement("div");
+        // endGamePopUpContainer.classList.add("end-game-pop-up-container");
+
+        // const endGamePopUp = document.createElement("div");
+        // endGamePopUp.classList.add('end-game-pop-up');
+        // endGamePopUpContainer.appendChild(endGamePopUp);
+
+        // const endGamePopUpParagraph = document.createElement("p");
+        // endGamePopUpParagraph.classList.add('end-game-pop-up-paragraph');
+        // endGamePopUpParagraph.innerHTML = 'The last coder left alive is:';
+        // endGamePopUp.appendChild(endGamePopUpParagraph);
+
+        // const endGameWinnerNameParagraph = document.createElement("div");
+        // endGameWinnerNameParagraph.classList.add("winner-name");
+        // endGameWinnerNameParagraph.appendChild(endGamePopUp);
+
+        // const endGameWinnerName = document.createTextNode(array[0]);
+        // endGameWinnerName.innerHTML = array[0]; 
+        // endGameWinnerNameParagraph.appendChild(endGameWinnerName);
+
+        // const playAgainButton = document.createElement("a");
+        // playAgainButton.classList.add('big-button');
+        // playAgainButton.innerHTML = "Play Again";
+        // endGamePopUp.appendChild(playAgainButton);
+
+        console.log(array.length);
+
+        let popup = 
+        `<div class="end-game-pop-up-container">
+            <div class="end-game-pop-up">
+                <p>The last coder left alive is:</p>
+                <p class="winner-name">${array[0]}</p>
+                <a href="index.html" class="big-button">Play Again</a>
+            </div>
+        </div>`;        
+        
+        const endGameDiv = document.createElement("div");
+        endGameDiv.innerHTML = popup;
+
+        let sevtion = document.querySelector('body');
+        const area = sevtion.children[2];
+        sevtion.insertBefore(endGameDiv, area);
+    }   
+}
+endGamePopUpFunction(names);
 
 choose.addEventListener('click', () =>{
     sacrificeRandom = (array) =>{
@@ -14,9 +64,6 @@ choose.addEventListener('click', () =>{
             console.log(randomName); 
             console.log(array);
            
-        }else{
-            console.log(array[0]+" wins");
-            randomName = array[0] + " wins";
         }
     const revealSacrificeDiv = document.createElement("div");
     revealSacrificeDiv.classList.add("random-name-div");
@@ -32,48 +79,22 @@ choose.addEventListener('click', () =>{
     setTimeout(function () {
         sevtion.insertBefore(revealSacrificeDiv, area);
     }, 1000);
+
+    let vomitingSound = new Audio("vomiting-02.wav")
+    vomitingSound.play();
     
-    setTimeout(function () {
-    window.location.href = "sacrificio.html"
-    }, 3000);
+    // setTimeout(function () {
+    // window.location.href = "sacrificio.html"
+    // }, 3000);
     };
 
 sacrificeRandom(names);})
 
 
 
-// ----------------end game pop up--------------------
 
-endGamePopUpFunction = (array) =>{
-    if(array.length=1){
-        const endGamePopUpContainer = document.createElement("div");
-        endGamePopUpContainer.classList.add("end-game-pop-up-container");
 
-        const endGamePopUp = document.createElement("div");
-        endGamePopUp.classList.add('end-game-pop-up');
-        endGamePopUpContainer.appendChild(endGamePopUp);
 
-        const endGamePopUpParagraph = document.createElement("p");
-        endGamePopUpParagraph.classList.add('end-game-pop-up-paragraph');
-        endGamePopUpParagraph.innerHTML = 'The last coder left alive is:';
-        endGamePopUp.appendChild(endGamePopUpParagraph);
-
-        const endGameWinnerName = document.createTextNode(endGameWinnerName);
-        endGameWinnerName.classList.add('random-name')
-        endGameWinnerName.innerHTML = array[0]; 
-        endGamePopUp.appendChild(endGameWinnerName);
-
-        const playAgainButton = document.createElement("a");
-        playAgainButton.classList.add('big-button');
-        playAgainButton.innerHTML = "Play Again";
-        endGamePopUp.appendChild(playAgainButton);
-
-        let sevtion = document.querySelector('body');
-        const area = sevtion.children[2];
-        sevtion.insertBefore(endGamePopUpContainer, area);
-    }   
-
-endGamePopUpFunction(names);}
 
 
 
