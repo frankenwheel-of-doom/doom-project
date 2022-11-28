@@ -23,7 +23,7 @@ let cajamuerto;
 
 (()=>{
     displayNames();
-    console.log(parsedcemetery)
+    console.log(parsedcemetery);
     addbutton.addEventListener("click", addName);
     content.addEventListener("click", deleteName);
 })();

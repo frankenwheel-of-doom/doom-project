@@ -10,6 +10,14 @@ let muertos = new Array;
 
 choose.addEventListener('click', () =>{
     sacrificeRandom = (array) =>{
+        if(cemetery!=null){
+            for(let i = 0; i < parsedcemetery.length; i++){
+                muertos.push(parsedcemetery[i]);
+            }
+        }else{
+            localStorage.setItem("cemetery", JSON.stringify(muertos));
+            window.location.reload(); 
+        }
         if(array.length>1){
             const random = Math.floor(Math.random()*array.length);
             randomName = array.splice(random,1)[0];
@@ -17,7 +25,9 @@ choose.addEventListener('click', () =>{
             console.log(randomName+" dies");
             console.log(array);
             muertos.push(randomName);
-            
+            // update localstorage
+            localStorage.setItem("playerlist", JSON.stringify(lista));
+            localStorage.setItem("cemetery", JSON.stringify(muertos)); 
         }else{
             //pop up
         }
@@ -36,9 +46,9 @@ choose.addEventListener('click', () =>{
         sevtion.insertBefore(revealSacrificeDiv, area);
     }, 1000);
     
-    /* setTimeout(function () {
+    setTimeout(function () {
     window.location.href = "sacrificio.html"
-    }, 3000); */
+    }, 3000);
     };
 
 sacrificeRandom(lista);})
@@ -49,7 +59,7 @@ sacrificeRandom(lista);})
 
 endGamePopUpFunction = (array) =>{
     if(array.length=1){
-        const endGamePopUpContainer = document.createElement("div");
+        /* const endGamePopUpContainer = document.createElement("div");
         endGamePopUpContainer.classList.add("end-game-pop-up-container");
 
         const endGamePopUp = document.createElement("div");
@@ -73,7 +83,14 @@ endGamePopUpFunction = (array) =>{
 
         let sevtion = document.querySelector('body');
         const area = sevtion.children[2];
-        sevtion.insertBefore(endGamePopUpContainer, area);
+        sevtion.insertBefore(endGamePopUpContainer, area); */
+        `<div class="end-game-pop-up-container">
+            <div class="end-game-pop-up">
+                <p>The last coder left alive is:</p>
+                <p>${array[0]}</p>
+                <a href="index.html" class="big-button">Play Again</a>
+            </div>
+        </div>`
     }   
 
 endGamePopUpFunction(names);}
