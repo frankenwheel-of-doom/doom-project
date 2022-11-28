@@ -12,7 +12,7 @@ sound1.play();
     stab.addEventListener('click', () =>{
 
     setTimeout(function () {
-        window.location.href = "juego.html"}, 5000);
+        window.location.href = "juego.html"}, 1000);
     });
 
 electrocute.addEventListener('click', () =>{
@@ -22,7 +22,7 @@ sound2.play();
     electrocute.addEventListener('click', () =>{
     
     setTimeout(function () {
-        window.location.href = "juego.html"}, 5000);
+        window.location.href = "juego.html"}, 1000);
     });
 
 poison.addEventListener('click', () =>{
@@ -32,7 +32,7 @@ sound3.play();
     poison.addEventListener('click', () =>{
 
     setTimeout(function () {
-            window.location.href = "juego.html"}, 5000);
+            window.location.href = "juego.html"}, 1000);
     });
         
         
