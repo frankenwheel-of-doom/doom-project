@@ -8,16 +8,22 @@ const deadbox = document.querySelector("dead"); // cemetery names
 
 // where new elements will appear
 const area = content.children[0];
+const end = content.children[content.length];
 
 // player list
+let names = ['Alba', 'Alexander', 'Arber', 'Arnau', 'Daniel', 'Denis', 'Fabio', 'Freddy', 'Gal', 'Hel', 'Joel', 'Lautaro', 'Manu', 'Nahuel', 'Ema', 'Ro', 'Rosie', 'Sablina', 'Sergi', 'Valeria', 'Victor'];
 let namelist = localStorage.getItem("playerlist");
 let parsedlist = JSON.parse(namelist);
 let lista = new Array;
-let muertos = [];
+let cemetery = localStorage.getItem("cemetery");
+let parsedcemetery = JSON.parse(cemetery);
+let muertos = new Array;
 let caja; 
+let cajamuerto;
 
 (()=>{
     displayNames();
+    console.log(parsedcemetery);
     addbutton.addEventListener("click", addName);
     content.addEventListener("click", deleteName);
 })();
@@ -30,13 +36,28 @@ function displayNames(){
             caja = `<p>${parsedlist[i]}</p>
             <button><img src="imagenes/minus.png" class="minus-button"></button>`;
             let div = document.createElement("div");
-            content.insertBefore(div, area.nextSibling);
             div.classList.add("added-name");
             div.innerHTML = caja;
+            content.insertBefore(div, area.nextSibling);
         }
     }else{
         // if there is no player list, create one
-        localStorage.setItem("playerlist", lista); 
+        localStorage.setItem("playerlist", JSON.stringify(names));
+        window.location.reload(); 
+    }
+    if(cemetery!=null){
+        for(let i = 0; i < parsedcemetery.length; i++){
+            muertos.push(parsedcemetery[i]);
+            cajamuerto = `<p>${parsedcemetery[i]}</p>
+            <button><img src="imagenes/dead.png"></button>`
+            let div = document.createElement("div");
+            div.classList.add("added-name", "dead");
+            div.innerHTML = cajamuerto;
+            content.insertBefore(div, end);
+        }
+    }else{
+        localStorage.setItem("cemetery", JSON.stringify(muertos));
+        window.location.reload(); 
     }
 }
 
@@ -71,7 +92,6 @@ function deleteName(e){
 
         // update the local storage lists
         localStorage.setItem("playerlist", JSON.stringify(lista));
-        localStorage.setItem("cemetery", muertos);
         console.log("player list: " + localStorage.getItem("playerlist"));
     }
 }

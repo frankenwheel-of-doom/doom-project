@@ -1,10 +1,13 @@
 // Esto elige un nombre al azar del array 'names', lo enseña en pantalla y lo elimina de la lista
-let names = ['Alba', 'Alexander', /*'Arber', 'Arnau', 'Daniel', 'Denis', 'Fabio', 'Freddy', 'Gal', 'Hel', 'Joel', 'Lautaro', 'Manu', 'Nahuel', 'Ema', 'Ro', 'Rosie', 'Sablina', 'Sergi', 'Valeria', 'Victor'*/];
 let choose = document.querySelector('.buttonChoose');
 let sacrificeRandom;
 let randomName;
 let franken = document.querySelector("video")
 let lista = JSON.parse(localStorage.getItem("playerlist"));
+
+let cemetery = localStorage.getItem("cemetery");
+let parsedcemetery = JSON.parse(cemetery);
+let muertos = new Array;
 
 console.log(names.length);
 // ----------------end game pop up--------------------
@@ -45,7 +48,8 @@ endGamePopUpFunction = (array) =>{
                 <a href="index.html" class="big-button">Play Again</a>
             </div>
         </div>`;        
-        
+
+
         const endGameDiv = document.createElement("div");
         endGameDiv.innerHTML = popup;
 
@@ -58,12 +62,26 @@ endGamePopUpFunction(names);
 
 choose.addEventListener('click', () =>{
     sacrificeRandom = (array) =>{
+        if(cemetery!=null){
+            for(let i = 0; i < parsedcemetery.length; i++){
+                muertos.push(parsedcemetery[i]);
+            }
+        }else{
+            localStorage.setItem("cemetery", JSON.stringify(muertos));
+            window.location.reload(); 
+        }
         if(array.length>1){
             const random = Math.floor(Math.random()*array.length);
             randomName = array.splice(random,1)[0];
-            console.log(randomName); 
+            lista.splice(lista.indexOf(randomName, 1));
+            console.log(randomName+" dies");
             console.log(array);
-           
+            muertos.push(randomName);
+            // update localstorage
+            localStorage.setItem("playerlist", JSON.stringify(lista));
+            localStorage.setItem("cemetery", JSON.stringify(muertos)); 
+        }else{
+            //pop up
         }
     const revealSacrificeDiv = document.createElement("div");
     revealSacrificeDiv.classList.add("random-name-div");
@@ -88,12 +106,33 @@ choose.addEventListener('click', () =>{
     // }, 3000);
     };
 
-sacrificeRandom(names);})
+sacrificeRandom(lista);})
 
 
 
+// ----------------end game pop up--------------------
+
+endGamePopUpFunction = (array) =>{
+    if(array.length=1){
+        const endGamePopUpContainer = document.createElement("div");
+        endGamePopUpContainer.classList.add("end-game-pop-up-container");
+
+        const endGamePopUp = document.createElement("div");
+        endGamePopUp.classList.add('end-game-pop-up');
+        endGamePopUpContainer.appendChild(endGamePopUp);
+
+        const endGamePopUpParagraph = document.createElement("p");
+        endGamePopUpParagraph.classList.add('end-game-pop-up-paragraph');
+        endGamePopUpParagraph.innerHTML = 'The last coder left alive is:';
+        endGamePopUp.appendChild(endGamePopUpParagraph);
+
+        const endGameWinnerName = document.createTextNode(endGameWinnerName);
+        endGameWinnerName.classList.add('random-name')
+        endGameWinnerName.innerHTML = array[0]; 
+        endGamePopUp.appendChild(endGameWinnerName);
 
 
+  
 
 
 
