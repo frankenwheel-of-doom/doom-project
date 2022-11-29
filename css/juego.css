@@ -91,6 +91,14 @@ img, video, canvas {
     padding: 5%;
 }
 
+
 .end-game-pop-up-paragraph {
     margin: 1rem auto 3rem auto;
+
+}.winner-name {
+    font-family: 'Creepster', sans-serif;
+    font-size: 3rem;
+    color: greenyellow;
+    text-align: center;
+    text-justify: center;
 }
