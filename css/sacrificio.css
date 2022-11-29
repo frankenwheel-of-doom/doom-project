@@ -4,31 +4,30 @@
     width: 100vw;
     height: 100vh;
     display: flex;
-    flex-direction: 2 column;
+    flex-direction: row;
  }
 
  /*1er div contiene la imagen kill*/
  .kill .image-kill{
     width: 100%;
-    height: 100vh;
+    display:flex;
  }
 
 /*imagen kill*/
  .kill .image-kill img{
-    
     width: 22rem;
-    box-sizing: border-box;
     display: flex;
-    object-fit: contain;
+    object-fit: cover;
     margin: 6rem auto;
  }
 
  /*2do div contiene los botones*/
  .kill .buttons-kill{
     width: 100%;
-    height: 100vh;
-    padding-top: 8rem;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
  }
 
 /*botones*/
@@ -68,7 +67,7 @@ p{
     
 /*contenedor*/
    .kill{
-      width: 100vp;
+      width: 100vw;
       height: 100vh;
       display: flex;
       flex-direction: column;
@@ -83,7 +82,7 @@ p{
 
 /*imagen kill*/
    .kill .image-kill img{
-      width: 12rem;
+      /* width: 12rem; */
       box-sizing: border-box;
       display: flex;
       object-fit: contain;
