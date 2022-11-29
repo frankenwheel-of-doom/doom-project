@@ -1,0 +1,66 @@
+h2 {
+    text-align: center;
+    margin-top: 12vw;
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    margin-bottom: 2rem;
+}
+
+section{
+   display:flex;
+   flex-direction: column;
+   height: 100vh;
+   width: 100vw;
+}
+
+div.text{
+   background-color: var(--colortwo);
+   /*min-height: 60vh;*/
+   max-height: 80vh;
+   margin-left: 2%;
+   margin-right: 2%;
+   padding: 1rem;
+   border-radius: 1.25rem;
+}
+
+.doctor{
+   align-self: center;
+   width: 50vw;
+   height: auto;
+   margin-left: 2rem;
+   margin-right: 1.5rem;
+}
+
+.container-inst .doctor img{
+   width: 25rem;
+   margin-right: 1.3rem;
+}
+
+.small-button{
+   position: fixed;
+   bottom: 2rem;
+   right: 2rem;
+   margin-left: 1.5rem;
+}
+
+/*This media queries is to hide the image in the mobile version*/
+@media only screen and (max-width: 750px) {
+   .doctor{
+    display: none;
+   }
+  .small-button{
+    /*left: 2rem;*/ 
+    right: auto;
+   }
+
+}
+
+.container-inst{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   margin-left: 2%;
+   margin-right: 2%;
+
+}
