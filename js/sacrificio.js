@@ -4,7 +4,14 @@ let electrocute= document.querySelector('.electrocute');
 let sound2 = new Audio ('sonidos/sound-electrocute.mp3');
 let poison = document.querySelector('.poison');
 let sound3 = new Audio ('sonidos/sound-machine-gun.mp3');
+let cambiar = document.querySelector('.prueba');
 
+                stab.addEventListener('click',() =>{ 
+                document.getElementById('prueba').style.display='block';
+                window.setTimeout('prueba()',2000)
+                })
+
+  
 stab.addEventListener('click', () =>{
 sound1.play();
 })
