@@ -66,9 +66,14 @@ body > section > div > button > img{
     left: 2rem;
 }
 
-/*  */
-img:not([src*="dead"]), .back-button{
+img:not([src*="dead"]), .small-button{
     cursor: pointer;
+}
+
+button:nth-of-type(2){
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
 }
 
 .dead > p{
