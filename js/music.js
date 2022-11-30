@@ -5,10 +5,10 @@ audioelement.innerHTML = `<source src="sonidos/haunted-house.mp3" type="audio/fl
 let body = document.querySelector("body");
 let insertzone = body.children[body.length];
 body.insertBefore(audioelement, insertzone);
-let source = document.querySelector("source");
+let source = document.querySelector("audio > source");
 
 // SONG
-source.src = "sonidos/haunted-house.mp3"; 
+source.src = "sonidos/ground-noises.mp3"; 
 
 // PLAY THE AUDIO
 
