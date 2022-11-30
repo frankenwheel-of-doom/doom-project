@@ -23,12 +23,11 @@ Los archivos de CSS son:
 Los archivos de javascript son: 
 - juego.js: contiene las funcionalidades de: 1)Pop Up del fin del juego y 2)Selección random de coders.
 
-- deathlist.js: contiene las funcionalidades de la lista: 1)Contener la lista predeterminada de coders, 2)Contener la lista de coders que van siendo sacrificados ('cemetery'), 3)Creación de una caja para cada nombre de la lista, 4)Funcionalidad de añadir nombres a la lista, 5)Funcionalidad de eliminar nombres de la lista, 5)Funcionalidad de resetear la lista de nombres. 
+- deathlist.js: contiene las funcionalidades de la lista: 1)Contener la lista predeterminada de coders, 2)Contener la lista de coders que van siendo sacrificados ('cemetery'), 3)Creación de una caja para cada nombre de la lista, 4)Funcionalidad de añadir nombres a la lista, 5)Funcionalidad de eliminar nombres de la lista, 6)Funcionalidad de resetear la lista de nombres y 7)Botón para volver a la página anterior.
 
 - sacrificio.js: contiene las funcionalidades de las animaciones audiovisuales de los métodos de sacrificio y los 'setTimeouts' que devuelven al usuario a la página del juego. 
 
-- backbutton.js: contiene la funcionalidad del botón para regresar a la página anterior. 
-
+- music.js: reproduce música en cada página sin que vuelva a empezar el audio.
 
 
 La carpeta 'bug-animation' es la que contiene los archivos que otorgan la animación de arañas/moscas en la la pantalla del juego. 
