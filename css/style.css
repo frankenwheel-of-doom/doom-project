@@ -61,6 +61,7 @@ h2 {
     position: relative;
     width: 20rem;
     grid-area: img;
+    margin-right: 3rem;
 }
 
 h1 {
@@ -164,6 +165,7 @@ h1 {
 @media (max-width: 750px) {
     .imginicio {
         width: 12rem;
+        margin:auto;
     }
 }
 
@@ -175,7 +177,7 @@ h1 {
     }
 }
 
-@media (max-width: 750px) {
+/* @media (max-width: 750px) {
     .button-play {
         font-size: 15px;
     }
@@ -190,8 +192,8 @@ h1 {
 @media only screen and (max-width: 700px) {
     .button-inst {
         font-size: 15px;
-    }
-}
+    } */
+/* } */
 
 
 /* ----------------CHOOSE BUTTON ANIMATION--------------- */
