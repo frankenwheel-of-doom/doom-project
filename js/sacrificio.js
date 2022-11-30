@@ -30,5 +30,5 @@ else if(e.target == poison || e.target.parentNode == poison){
 }
 setTimeout(function () {
     window.location.href = "juego.html"
-}, 3000);
+}, 4000);
 }, { once: true });
