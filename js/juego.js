@@ -115,4 +115,4 @@ choose.addEventListener('click', () =>{
     }, 3000);
     };
 
-sacrificeRandom(lista);})
+sacrificeRandom(lista);}, { once: true });
