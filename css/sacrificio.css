@@ -18,7 +18,7 @@
     width: 22rem;
     display: flex;
     object-fit: cover;
-    margin: 6rem auto;
+    margin: 2rem auto 2rem auto;
  }
 
  /*2do div contiene los botones*/
@@ -61,6 +61,17 @@ p{
    padding-right: 20px;
 }
 
+h1{
+   margin-top: 5rem;
+   margin-bottom: 1rem;
+}
+
+.image-kill{
+   display: flex;
+   flex-flow: column;
+   margin-bottom: 2rem;
+}
+
 /********** @media **********/
 
 @media (max-width:600px){
@@ -82,7 +93,7 @@ p{
 
 /*imagen kill*/
    .kill .image-kill img{
-      /* width: 12rem; */
+      width: 16rem;
       box-sizing: border-box;
       display: flex;
       object-fit: contain;
@@ -103,4 +114,15 @@ p{
       margin: 1.5rem auto;
       font-size: 30px;
   }
+
+   h1{
+   margin-top: 3rem;
+   margin-bottom: 1rem;
+   }
 }
+
+
+
+/* *{
+   border: red 1px solid;
+} */
