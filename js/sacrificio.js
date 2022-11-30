@@ -4,42 +4,35 @@ let electrocute= document.querySelector('.electrocute');
 let sound2 = new Audio ('sonidos/sound-electrocute.mp3');
 let poison = document.querySelector('.poison');
 let sound3 = new Audio ('sonidos/sound-machine-gun.mp3');
-let cambiar = document.querySelector('.prueba');
 
-                stab.addEventListener('click',() =>{ 
-                document.getElementById('prueba').style.display='block';
-                window.setTimeout('prueba()',2000)
-                })
 
-  
-stab.addEventListener('click', () =>{
-sound1.play();
-})
+
 
     stab.addEventListener('click', () =>{
-
+        sound1.play();
+        document.getElementById('prueba1').style.display='block';
+        document.getElementById('prueba').style.display='none';
     setTimeout(function () {
-        window.location.href = "juego.html"}, 1000);
+        window.location.href = "juego.html"}, 5000);
     });
 
-electrocute.addEventListener('click', () =>{
-sound2.play();
-})
+
     
     electrocute.addEventListener('click', () =>{
-    
+        sound2.play();
+        document.getElementById('prueba2').style.display='block';
+        document.getElementById('prueba').style.display='none';
     setTimeout(function () {
-        window.location.href = "juego.html"}, 1000);
+        window.location.href = "juego.html"}, 5000);
     });
 
-poison.addEventListener('click', () =>{
-sound3.play();
-})
     
     poison.addEventListener('click', () =>{
-
+        sound3.play()
+        document.getElementById('prueba3').style.display='block';
+        document.getElementById('prueba').style.display='none';
     setTimeout(function () {
-            window.location.href = "juego.html"}, 1000);
+        window.location.href = "juego.html"}, 4000);
     });
         
         
