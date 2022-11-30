@@ -78,7 +78,7 @@ function addName(){
     div.innerHTML = caja;
 
     //update the localStorage lists
-    localStorage.setItem("cemetery", muertos);
+    localStorage.setItem("cemetery", JSON.stringify(muertos));
     localStorage.setItem("playerlist", JSON.stringify(lista));
     console.log("added: " + lista[lista.length-1]);
     console.log("player list: " + localStorage.getItem("playerlist"));
