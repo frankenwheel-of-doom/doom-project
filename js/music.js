@@ -8,7 +8,7 @@ body.insertBefore(audioelement, insertzone);
 let source = document.querySelector("audio > source");
 
 // SONG
-source.src = "sonidos/ground-noises.mp3"; 
+source.src = "sonidos/nightmare-on-imaginationland-8040 (1).mp3"; 
 
 // PLAY THE AUDIO
 
@@ -18,7 +18,7 @@ console.log("music was left at time: " + musicTime)
 audio.currentTime = musicTime;
 audio.play();
 audio.loop = true;
-audio.volume = 0.2;
+audio.volume = 0.1;
 
 
 addEventListener("click", musicCurrentTime);
